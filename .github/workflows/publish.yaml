@@ -35,7 +35,8 @@ jobs:
 
         steps:
         - name: print the input name to STDOUT
-          run: echo username is ${{ inputs.username }}
+          run: |
+            echo username is ${{ inputs.username }}
 
         - name: using secret tokens
           run: echo username is ${{ secrets.FIRST_NAME }} ${{ secrets.LAST_NAME }}
