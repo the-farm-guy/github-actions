@@ -14,9 +14,9 @@ on:
         
         secrets:
             FIRST_NAME:
-                required: true
+                required: false
             LAST_NAME:
-                required: true
+                required: false
 
     # defining dispatch for manually trigger
     workflow_dispatch: 
@@ -39,4 +39,5 @@ jobs:
             echo username is ${{ inputs.username }}
 
         - name: using secret tokens
-          run: echo username is ${{ secrets.FIRST_NAME }} ${{ secrets.LAST_NAME }}
+          run: |
+            echo username is ${{ secrets.FIRST_NAME }} ${{ secrets.LAST_NAME }}
