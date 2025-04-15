@@ -1,4 +1,4 @@
-name: call publish workflow
+name: automatically trigger
 
 # to run workflow manually
 # on: 
