@@ -18,3 +18,6 @@ jobs:
         # Optional because required = false in publish.yaml
         with:
             username: 'the-farm-guy'
+        secrets: 
+            FIRST_NAME: ${{ secrets.FIRST_NAME }}
+            LAST_NAME: ${{ secrets.LAST_NAME }}
