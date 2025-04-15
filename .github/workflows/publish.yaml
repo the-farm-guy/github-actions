@@ -1,0 +1,26 @@
+name: Testing workflow
+
+on: 
+    workflow_call: 
+        inputs:
+            username:
+                description: 'this is a decription'
+                default: 'farm-guy'
+                required: false
+                type: string
+
+    workflow_dispatch: 
+        inputs:
+            username:
+                description: 'this is a discription'
+                default: 'farm-guy'
+                required: false
+                type: string
+
+jobs:
+    print-username:
+        runs-on: windows-latest
+
+        steps:
+        - name: Print the input name to STDOUT
+          run: echo username is ${{ inputs.username }}
