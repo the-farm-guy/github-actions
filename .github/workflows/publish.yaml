@@ -11,6 +11,12 @@ on:
                 default: 'farm-guy'
                 required: false
                 type: string
+        
+        secrets:
+            FIRST_NAME:
+                required: true
+            LAST_NAME:
+                required: true
 
     # defining dispatch for manually trigger
     workflow_dispatch: 
@@ -28,5 +34,8 @@ jobs:
         runs-on: windows-latest
 
         steps:
-        - name: Print the input name to STDOUT
+        - name: print the input name to STDOUT
           run: echo username is ${{ inputs.username }}
+
+        - name: using secret tokens
+          run: echo username is ${{ secrets.FIRST_NAME }} ${{ secrets.LAST_NAME }}
