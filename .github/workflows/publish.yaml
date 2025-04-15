@@ -1,16 +1,22 @@
 name: Testing workflow
 
 on: 
+    # defining workflow call
     workflow_call: 
         inputs:
+
+            # required = false make its optional.
             username:
                 description: 'this is a decription'
                 default: 'farm-guy'
                 required: false
                 type: string
 
+    # defining dispatch for manually trigger
     workflow_dispatch: 
         inputs:
+
+            # required = false make its optional
             username:
                 description: 'this is a discription'
                 default: 'farm-guy'

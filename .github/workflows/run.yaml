@@ -1,8 +1,10 @@
 name: call publish workflow
 
+# to run workflow manually
 # on: 
 #     workflow_dispatch: 
 
+# to trigger workflow automatically
 on:
     push: 
         branches: 
@@ -10,6 +12,9 @@ on:
 
 jobs:
     call-publish-workflow:
+        # path to workflow defination yaml.
         uses: ./.github/workflows/publish.yaml
+
+        # Optional because required = false in publish.yaml
         with:
             username: 'the-farm-guy'
